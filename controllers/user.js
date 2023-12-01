@@ -1,7 +1,6 @@
 import { User } from "../models/user.js";
 import bcrypt from "bcrypt";
 import jwt from "jsonwebtoken";
-import { errorHandler } from "../middlewares/error.js";
 
 export const login = async (req, res, next) => {
   const { email, password } = req.body;

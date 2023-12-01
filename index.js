@@ -3,6 +3,7 @@ import mongoose from "mongoose"
 import dotenv from "dotenv"
 import healthRouter from "./routes/health.js"
 import userRouter from "./routes/user.js"
+import weekListRouter from "./routes/weeklist.js"
 import { errorHandler } from "./middlewares/error.js"
 
 
@@ -25,6 +26,7 @@ app.get('/',(req,res)=>{
 })
 
 app.use(healthRouter)
+app.use(weekListRouter)
 app.use(userRouter)
 
 
