@@ -21,7 +21,7 @@ export const login = async (req, res, next) => {
         message:"Invalid email or password"
       })
     }
-    const jwtToken=jwt.sign(user.toJSON(),process.env.SECRET_KEY,{expiresIn:'1m'})
+    const jwtToken=jwt.sign(user.toJSON(),process.env.SECRET_KEY,{expiresIn:'15m'})
     res.status(200).json({
       status:true,
       message:"Login Successfull",
@@ -55,7 +55,7 @@ export const signup = async (req, res, next) => {
       mobile,
     });
     const jwtToken = jwt.sign(user.toJSON(), process.env.SECRET_KEY, {
-      expiresIn: "1m",
+      expiresIn: "15m",
     });
 
     res.json({
